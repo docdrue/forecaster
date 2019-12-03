@@ -2,13 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>forecaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>Forecaster - My weather board</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" type="text/css" />
+    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
   </head>
   <body>
-    <div id="app">
-      <router-link to="/">Index</router-link>
-      <router-link to="/help">Help</router-link>
-      <router-view></router-view>
+    <div id="app-forecaster">
+      <transition name="slide-right">
+        <router-view></router-view>
+      </transition>
     </div>
     <script src="/dist/build.js"></script>
   </body>

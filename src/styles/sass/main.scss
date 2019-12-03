@@ -1,0 +1,295 @@
+// Add fonts.
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+// Add variables.
+@import "./variables.scss";
+
+// Add project styles.
+@import "./general.scss";
+@import "./page-home.scss";
+@import "./page-area-of-forecast.scss";
+@import "./page-error.scss";
+
+
+.geolocation-helper{
+	text-align: center;
+		.locator-icon{
+			.pulse{
+				&::after{
+					margin: 0;
+					top: 0;
+					left: -5px;
+				}
+			}
+		}
+	@include break($mobile) {
+		right: 46%;
+	};
+}
+#forecast .wrapper-content{
+	width: 1100px;
+	@include break($medium){
+		width: 100%;
+	}
+	.logo{
+		@include break($mobile){
+			text-align: center;
+		}
+	}
+	.wrapper-forecast{
+		background: #fff;
+		border-radius: 10px;
+		/*
+		background: linear-gradient(290deg, #ffffff, #c8f5f4, #10f0e8, #c8f5f2, #ffffff);
+		background-size: 1000% 1000%;
+
+		-webkit-animation: AnimationName 25s ease infinite;
+		-moz-animation: AnimationName 25s ease infinite;
+		animation: AnimationName 25s ease infinite;
+
+		@-webkit-keyframes AnimationName {
+		    0%{background-position:0% 13%}
+		    50%{background-position:100% 88%}
+		    100%{background-position:0% 13%}
+		}
+		@-moz-keyframes AnimationName {
+		    0%{background-position:0% 13%}
+		    50%{background-position:100% 88%}
+		    100%{background-position:0% 13%}
+		}
+		@keyframes AnimationName { 
+		    0%{background-position:0% 13%}
+		    50%{background-position:100% 88%}
+		    100%{background-position:0% 13%}
+		}*/
+		@include break($mobile){
+			padding: 20px;
+			position: static;
+		}
+		@include break($x-small) {
+			padding: 0;
+		}
+		.current-city-name{
+			@include break($neutral){
+				font-size: 30px;
+				text-align: center;
+			}
+		}
+		.current-date{
+			@include break($neutral){
+				text-align: center;
+			}
+		}
+		.settings-checker{
+			.button{
+				margin: 0;
+			}
+		}
+		.columns{
+			width: 890px;
+			margin: 40px auto;
+			@include break($neutral){
+				width: 100%;
+			}
+			@include break($mobile){
+				margin: 10px 0 0;
+			}
+			.current-weather{
+				@include break($neutral){
+					width: 100%;
+				}
+				.current-weather-title{
+					@include break($neutral){
+						text-align: center;
+					}
+				}
+				.temperature{
+					font-size: 90px;
+					text-align: center;
+				}
+				.humidity, .feels-like, .wind-chill{
+					@include break($neutral){
+						width: 32%;
+						text-align: center;
+					}
+					.title{
+						@include break($x-small){
+							font-size: 20px;
+						}
+					}
+				}
+				.humidity, .feels-like{
+					@include break($neutral){
+						border-right: 2px solid #202c7b;
+					}
+				}
+				.weather-icon{
+					@include break($neutral){
+						float: left;
+						width: 50%;
+					}
+					@include break($x-small){
+						float: none;
+						width: 100%;
+						text-align: center;
+						margin-top: 40px;
+					}
+				}
+				.sun{
+					margin-top: 40px;
+					@include break($neutral){
+						float: left;
+						width: 50%;
+						margin-top: 40px;
+					}
+					.sunrise, .sunset{
+						@include break($neutral){
+							width: 100%;
+						}
+					}
+					@include break($x-small){
+						float: none;
+						width: 100%;
+						padding-left: 23%;
+					}
+				}
+			}
+			.wind-speed-wrapper{
+				@include break($neutral){
+					padding-left: 0;
+					border-left:none;
+					width: 100%;
+					height: auto;
+				}
+				@include break($x-small){
+					margin-top: 50px;
+				}
+				.current-speed-title{
+					@include break($x-small){
+						display: none;
+					}
+				}
+				.rose-of-wind{
+					@include break($neutral) {
+						margin: 50px auto;
+					}
+					.areas-wrapper{
+						.area{
+							&.n{
+								@include break($neutral) {
+									margin: 7px 0 0 -14px;
+								}
+							}
+							&.e{
+								@include break($neutral) {
+									margin: -20px 17px 0 0;
+								}
+							}
+							&.s{
+								@include break($neutral){
+									margin:0 0 7px -10px;
+								}
+
+							}
+							&.w{
+								@include break($neutral){
+									margin:-20px 0 0 12px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.hourly-10-days-forecast{
+			@include break($mobile){
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+			@include break($x-small){
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+	}
+}
+.line {
+	fill: none;
+	stroke: white;
+	stroke-width: 2px;
+}
+
+.overlay {
+	fill: none;
+	pointer-events: all;
+}
+.geolocation-helper{
+	right: auto;
+	margin: 0;
+	left: 50%;
+	transform:translateX(-50%);
+	@include break($x-small){
+		width: 300px;
+	}
+}
+#typeahead{
+	margin: 0;
+	transform:translateX(-50%);
+	@include break($x-small){
+		width: 360px;
+	}
+	@include break($x-small){
+		width: 290px;
+	}
+	.geolocation-finder{
+		@include break(x-small){
+
+		}
+		ul.typeahead-dropdown-menu{
+			@include break($x-small){
+				margin: 0;
+				left: auto;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
+
+/* Good looking scroll bar */
+::-webkit-scrollbar {
+	width: 3px;
+	height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: rgba(32,44,123,.6);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(32,44,123,.6);
+}
+
+
+.dragscroll{
+	overflow-x: scroll;
+	cursor: grab;
+	cursor : -o-grab;
+	cursor : -moz-grab;
+	cursor : -webkit-grab;
+}
+
+

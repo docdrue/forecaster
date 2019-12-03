@@ -1,0 +1,63 @@
+html {
+	width: 100%;
+  height: 100%;
+}
+
+body {
+	padding: 0;
+  margin: 0;
+	background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100%;
+  box-sizing: border-box;
+  // background: url("../../assets/bg1.png") fixed, -webkit-gradient(-105deg, #009acc, #363795) fixed;
+  // background: url("../../assets/bg1.png") fixed, -webkit-linear-gradient(-105deg, #009acc, #363795) fixed;
+  // background: url("../../assets/bg1.png") fixed, linear-gradient(-105deg, #009acc, #363795) fixed;
+  background: url("../../assets/bg2.jpg") fixed;
+  background-size: cover;
+}
+
+// Logo styles 
+.logo {
+  cursor: pointer;
+}
+
+// Load spinner.
+.load-spinner {
+  animation: rotate-load-spinner 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+  
+  & .path {
+    stroke: hsl(210, 70, 75);
+    stroke-linecap: round;
+    animation: dash-load-spinner 1.5s ease-in-out infinite;
+  }
+  
+}
+
+@keyframes rotate-load-spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash-load-spinner {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
